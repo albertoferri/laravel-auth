@@ -28,7 +28,7 @@
         
             <div class="mb-3">
                 <label for="git_url" class="form-label">Link alla repo di GitHub</label>
-                <input type="text" class="form-control" id="git_url" name="git_url" value="{{ $project->gir_url }}">
+                <input type="text" class="form-control" id="git_url" name="git_url" value="{{ $project->git_url }}">
             </div>
         
             <button type="submit" class="btn btn-warning fw-bold text-uppercase">modifica</button>

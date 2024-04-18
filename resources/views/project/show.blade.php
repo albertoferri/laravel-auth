@@ -11,13 +11,16 @@
                       <p class="card-text">{{$project->description}}</p>
                       <p class="card-text">{{$project->skill}}</p>
                       <p class="card-text">{{$project->git_url}}</p>
-                      
-                      <form action="{{route('project.destroy', $project->id)}}" method="POST">
-                        @csrf
-                        @method("DELETE")
-                        
-                        <button class="btn btn-danger text-uppercase fw-bold">Elimina</button>
-                    </form>
+
+                      <div class="d-flex gap-3">
+                          <a href="{{route('project.edit', $project->id)}}" class="btn btn-warning fw-bold text-uppercase">modifica</a>
+                          <form action="{{route('project.destroy', $project->id)}}" method="POST">
+                            @csrf
+                            @method("DELETE")
+                            
+                            <button class="btn btn-danger text-uppercase fw-bold">Elimina</button>
+                        </form>
+                      </div>
                     </div>
                 </div>
             </div>
