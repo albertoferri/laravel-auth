@@ -21,7 +21,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view("project.create");
     }
 
     /**
@@ -34,7 +34,7 @@ class ProjectController extends Controller
         $newProject->fill($request->all());
 
         $newProject->save();
-        
+
         return redirect()->route("project.index");
     }
 
@@ -51,7 +51,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return view('project.edit', compact('project'));
     }
 
     /**
@@ -59,7 +59,9 @@ class ProjectController extends Controller
      */
     public function update(StoreProjectRequest $request, Project $project)
     {
-        //
+        $project->update($request->all());
+        $project->save();
+        return redirect()->route('project.show', $project->id);
     }
 
     /**
@@ -67,6 +69,7 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        $project->delete();
+        return redirect()->route("project.index");
     }
 }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,7 +43,9 @@ Route::middleware(['auth', 'verified'])
         // iniziano con admin.
         // url con admin/
         Route::get('/', [DashboardController::class,'index'])->name('index');
-        
+
         Route::get('/users', [DashboardController::class ,'users'])->name('users');
     }
 );
+
+Route::resource('project', ProjectController::class);

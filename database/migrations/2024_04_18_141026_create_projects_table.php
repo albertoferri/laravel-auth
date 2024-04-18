@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
 
             $table->string('name');
-            $table->string('description');
-            $table->string('thumb');
+            $table->text('description');
+            $table->text('thumb');
             $table->string('skill');
             $table->string('git_url');
 
