@@ -3,7 +3,12 @@
 @section('content')
     <div class="container py-5">
 
-        <h1>PROGETTI</h1>
+        <div class="d-flex justify-content-between align-items-center pb-5">
+            <h1>PROGETTI</h1>
+    
+            <a href="{{route('project.create')}}" class="btn btn-primary fw-bold text-uppercase">crea</a>
+
+        </div>
 
         <div class="row row-gap-4">
             @foreach ($projects as $project)
