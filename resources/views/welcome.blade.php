@@ -12,6 +12,7 @@
             <div class="col-12 d-flex justify-content-center">
                 <img class="img-fluid" src="/img/wip-removebg-preview.png" alt="">
             </div>
+            
             @for ($i = 0;$i < 4; $i++)
             <div class="col-3">
                 <div class="card" aria-hidden="true">
