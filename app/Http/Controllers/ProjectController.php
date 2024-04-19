@@ -29,6 +29,10 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
+
+        $request->validated();
+
+
         $newProject = new Project();
 
         $newProject->fill($request->all());
@@ -59,8 +63,14 @@ class ProjectController extends Controller
      */
     public function update(StoreProjectRequest $request, Project $project)
     {
+
+        $request->validated();
+
+
         $project->update($request->all());
+
         $project->save();
+        
         return redirect()->route('project.show', $project->id);
     }
 
@@ -70,6 +80,7 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
+        
         return redirect()->route("project.index");
     }
 }
