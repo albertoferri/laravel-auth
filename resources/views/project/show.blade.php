@@ -10,7 +10,7 @@
                       <h5 class="card-title">{{$project->name}}</h5>
                       <p class="card-text">{{$project->description}}</p>
                       <p class="card-text">{{$project->skill}}</p>
-                      <p class="card-text">{{$project->git_url}}</p>
+                      <a class="btn btn-primary my-2" href="{{$project->git_url}}">APRI REPO</a><br>
 
                       <div class="d-flex gap-3">
                           <a href="{{route('project.edit', $project->id)}}" class="btn btn-warning fw-bold text-uppercase">modifica</a>

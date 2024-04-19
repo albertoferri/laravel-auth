@@ -5,8 +5,9 @@
 <div class="container py-5">
 
     <h1>DASHBOARD DI AMMINISTRAZIONE</h1>
+    <a href="{{route('project.create')}}" class="btn btn-primary fw-bold text-uppercase">crea</a>
 
-    <div class="row row-cols-3 row-gap-4 py-3">
+    <div class="row row-cols-3 py-3">
         @foreach ($projects as $project)
         <div class="card mb-3">
             <img src="{{$project->thumb}}" class="card-img-top" alt="immagine progetto">
