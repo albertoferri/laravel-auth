@@ -6,7 +6,7 @@
 
     <h1>DASHBOARD DI AMMINISTRAZIONE</h1>
 
-    <div class="row row-gap-4">
+    <div class="row row-cols-3 row-gap-4 py-3">
         @foreach ($projects as $project)
         <div class="card mb-3">
             <img src="{{$project->thumb}}" class="card-img-top" alt="immagine progetto">
