@@ -5,7 +5,7 @@
         <div class="row justify-content-center mb-5">
             <div class="col-sm-10">
                 <div class="card mb-3">
-                    <img src="{{$project->thumb}}" class="card-img-top" alt="immagine progetto">
+                    <img src="{{asset('storage/' . $project->thumb)}}" class="card-img-top" alt="immagine progetto">
                     <div class="card-body">
                       <h5 class="card-title">{{$project->name}}</h5>
                       <p class="card-text">{{$project->description}}</p>

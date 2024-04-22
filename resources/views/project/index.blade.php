@@ -13,7 +13,7 @@
         <div class="row row-cols-3 gap-4">
             @foreach ($projects as $project)
             <div class="card mb-3">
-                <img src="{{$project->thumb}}" class="card-img-top  " alt="immagine progetto" style="height: 200px;">
+                <img src="{{asset('storage/' . $project->thumb)}}" class="card-img-top  " alt="immagine progetto" style="height: 200px;">
                 <div class="card-body">
                   <h5 class="card-title">{{$project->name}}</h5>
                   <p class="card-text">{{$project->skill}}</p>

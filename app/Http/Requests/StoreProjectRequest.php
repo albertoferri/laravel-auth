@@ -24,7 +24,7 @@ class StoreProjectRequest extends FormRequest
         return [
             'name'=> 'required|max:100',
             'description'=> 'nullable',
-            'thumb'=> 'required|url',
+            'thumb'=> 'nullable|file|max:1024',
             'skill'=> 'required',
             'git_url'=> 'required|url',
         ];
@@ -34,8 +34,8 @@ class StoreProjectRequest extends FormRequest
         return [
             'name.required' => 'Il nome deve essere inserito',
             'name.max' => "Il nome deve avere massimo :max caratteri",
-            'thumb.required' => "L'immagine di copertina deve essere inserita",
-            'thumb.url' => "Il link della immagine di copertina deve essere un URL valido",
+            'thumb.file' => "Il file deve essere un'immagine",
+            'thumb.max' => "La dimensione del file non deve superare i 1024 KB",
             'skill.required' => "Le tecnologie utilizzate devono essere inserite",
             'git_url.required' => "Il link alla repo di GitHub deve essere inserito",
             'git_url.url' => "Il link alla repo di GitHub deve essere un URL valido",

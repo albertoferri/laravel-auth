@@ -3,7 +3,7 @@
 @section('content')
     <div class="container py-5">
 
-        <form action="{{ route('project.update', $project) }}" method="POST">
+        <form action="{{ route('project.update', $project) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="mb-3">
@@ -28,7 +28,7 @@
         
             <div class="mb-3">
                 <label for="thumb" class="form-label">Immagine di copertina</label>
-                <input type="text" class="form-control @error('thumb') is-invalid @enderror" id="thumb" name="thumb" value="{{ $project->thumb }}">
+                <input type="file" class="form-control @error('thumb') is-invalid @enderror" id="thumb" name="thumb" value="{{ $project->thumb }}">
                 @error('thumb')
                 <div class="invalid-feedback">
                   {{$message}}

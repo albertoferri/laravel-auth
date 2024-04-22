@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -35,8 +36,15 @@ class ProjectController extends Controller
 
         $newProject = new Project();
 
-        $newProject->fill($request->all());
+        
+        if($request->hasFile('thumb')){
+            // qui ci salviamo il percorso dell'immagine in una variabile e contemporanteamente salviamo l'immagine nel server
+            $path = Storage::disk('public')->put('project_image', $request->thumb);
+            $newProject->thumb = $path;
+        }
 
+        $newProject->fill($request->all());
+        
         $newProject->save();
 
         return redirect()->route("project.index");

@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->string('name');
             $table->text('description')->nullable();
-            $table->text('thumb');
+            $table->text('thumb')->nullable();
             $table->string('skill');
             $table->string('git_url');
 
