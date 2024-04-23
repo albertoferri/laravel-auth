@@ -10,7 +10,7 @@
     <div class="row row-cols-3 py-3">
         @foreach ($projects as $project)
         <div class="card mb-3">
-            <img src="{{$project->thumb}}" class="card-img-top" alt="immagine progetto">
+            <img src="{{asset('storage/' . $project->thumb)}}" class="card-img-top" alt="immagine progetto">
             <div class="card-body">
               <h5 class="card-title">{{$project->name}}</h5>
               <p class="card-text">{{$project->description}}</p>
